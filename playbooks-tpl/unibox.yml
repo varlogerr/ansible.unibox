@@ -5,6 +5,7 @@
   - base
   - docker
   - git
+  - nvm
   - toolbox
   - samba
   vars:
