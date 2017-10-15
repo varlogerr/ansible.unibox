@@ -1,0 +1,36 @@
+---
+- name: download mysql installer v{{ mysql_installer_version }} 
+  get_url:
+    url: https://dev.mysql.com/get/mysql-apt-config_0.8.8-1_all.deb
+    dest: /tmp/mysql.deb
+    mode: 0777
+    force: yes
+
+- name: add mysql ppa
+  apt: deb=/tmp/mysql.deb
+
+- name: update cache
+  shell: apt-get update
+
+- name: install mysql server / client
+  apt: pkg={{ item }} state=latest
+  with_items:
+  - mysql-server
+  - mysql-client
+
+- name: upgrade mysql
+  shell: 'mysql_upgrade --force'
+
+- name: start mysql service
+  service: name=mysql state=started enabled=yes
+
+- name: ensure python mysql bindings installed
+  apt: name=python-mysqldb state=installed
+
+- name: create mysql user
+  mysql_user:
+    name: "{{ mysql_user }}"
+    password: "{{ mysql_pass }}"
+    priv: '*.*:ALL'
+    host: '%'
+    state: present

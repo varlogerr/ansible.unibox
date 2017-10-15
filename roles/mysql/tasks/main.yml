@@ -1,0 +1,3 @@
+---
+- include: _install-mysql.yml
+- include: _configure-mysql.yml

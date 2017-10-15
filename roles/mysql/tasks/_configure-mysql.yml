@@ -1,0 +1,20 @@
+---
+- name: create mysql config directory
+  file:
+    path:  /etc/mysql/mysql.conf.d
+    state: directory
+    owner: root
+    group: root
+    mode:  0644
+
+- name: create mysql config file
+  template:
+    src: mysqld.cnf.j2
+    dest: /etc/mysql/mysql.conf.d/mysqld.cnf
+  notify: restart mysql
+
+- name: create mysql config file
+  template:
+    src: mysqld.cnf.j2
+    dest: /etc/mysql/conf.d/mysqld.cnf
+  notify: restart mysql
