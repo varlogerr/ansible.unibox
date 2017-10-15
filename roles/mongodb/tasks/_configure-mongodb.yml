@@ -1,0 +1,7 @@
+---
+- name: open mongodb access to public access
+  lineinfile:
+    dest: /etc/mongod.conf
+    regexp: '^\s\sbindIp: .*'
+    line: '  bindIp: 0.0.0.0'
+  notify: restart mongodb

@@ -1,0 +1,29 @@
+# Stretch temp work around
+- name: add jessie backports
+  lineinfile:
+    dest: /etc/apt/sources.list
+    create: yes
+    line: 'deb http://ftp.debian.org/debian jessie-backports main'
+    state: present
+
+- name: add mongo ppa key
+  apt_key:
+    keyserver: hkp://keyserver.ubuntu.com:80
+    id: 0C49F3730359A14518585931BC711F9BA15703C6
+    state: present
+
+- name: add mongo sources list
+  lineinfile:
+    dest: /etc/apt/sources.list.d/mongodb-3.4.list
+    create: yes
+    line: 'deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/3.4 main'
+    state: present
+
+- name: update cache
+  shell: apt-get update
+
+- name: install mongo
+  apt: name=mongodb-org state=latest
+
+- name: start mongodb
+  service: name=mongod state=started enabled=yes
