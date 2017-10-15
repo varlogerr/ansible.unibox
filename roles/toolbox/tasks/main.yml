@@ -1,0 +1,13 @@
+---
+- name: install basic toolbox
+  apt: name="{{ item }}" state=present
+  with_items:
+  - curl
+  - dtrx
+  - htop
+  - mc
+  - nano
+  - tasksel
+  - tree
+  - vim
+  - zip

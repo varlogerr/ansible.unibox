@@ -4,6 +4,7 @@
   roles:
   - base
   - docker
+  - toolbox
   vars:
     my_user: # user
 
