@@ -1,5 +1,5 @@
 ---
-- name: add sudoers
+- name: add {{ my_user }} to sudoers
   lineinfile:
     dest: "/etc/sudoers.d/00_{{ my_user }}"
     create: yes
