@@ -1,0 +1,3 @@
+---
+- include: _install-samba.yml
+- include: _configure-samba.yml

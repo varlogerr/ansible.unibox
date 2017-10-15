@@ -1,0 +1,15 @@
+---
+- name: create samba shared directory
+  file:
+    path:  "{{ samba_share_dir }}"
+    state: directory
+    owner: "{{ my_user }}"
+    group: "{{ my_group }}"
+    mode:  0755
+
+- name: create custom samba config file
+  template: src=my_samba.conf.j2 dest=/etc/samba/my_smbd.conf
+
+- name: include custom samba config to samba config
+  lineinfile: dest=/etc/samba/smb.conf line='include = /etc/samba/my_smbd.conf'
+  notify: restart smbd

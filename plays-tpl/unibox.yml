@@ -5,7 +5,11 @@
   - base
   - docker
   - toolbox
+  - samba
   vars:
     my_user: # user
+    my_group: # user group
 
+    my_home_dir: "/home/{{ my_user }}"
+    samba_share_dir: "{{ my_home_dir }}/Share"
     docker_compose_version: 1.16.1

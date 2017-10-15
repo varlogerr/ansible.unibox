@@ -1,0 +1,6 @@
+---
+- name: install samba
+  apt: name=samba state=latest
+
+- name: ensure samba starts on boot
+  service: name=smbd state=started enabled=yes
