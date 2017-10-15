@@ -4,12 +4,17 @@
   roles:
   - base
   - docker
+  - git
   - toolbox
   - samba
   vars:
     my_user: # user
     my_group: # user group
+    git_user: # git user
+    git_email: # git user email
 
     my_home_dir: "/home/{{ my_user }}"
+    my_conf_dir: "{{ my_home_dir }}/.{{ my_user }}_conf"
+    git_from_ppa: 0
     samba_share_dir: "{{ my_home_dir }}/Share"
     docker_compose_version: 1.16.1

@@ -1,0 +1,26 @@
+---
+- name: crete configuration directory
+  file:
+    path: "{{ my_conf_dir }}"
+    owner: "{{ my_user }}"
+    group: "{{ my_group }}"
+    state: directory
+    mode: 0700
+
+- name: add the user custom gitconfig
+  template:
+    src: gitconfig.j2
+    dest: "{{ my_gitconfig_path }}"
+    owner: "{{ my_user }}"
+    group: "{{ my_group }}"
+    mode: 0600
+
+- name: include custom gitconfig to default gitconfig
+  blockinfile:
+    dest: "{{ my_home_dir }}/.gitconfig"
+    create: yes
+    owner: "{{ my_user }}"
+    group: "{{ my_group }}"
+    block: |
+      [include]
+        path = "{{ my_gitconfig_path }}"

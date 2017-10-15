@@ -1,0 +1,3 @@
+---
+my_gitconfig_path: "{{ my_conf_dir }}/.git_gitconfig"
+my_bashrc_git_path: "{{ my_conf_dir }}/.git_bashrc"

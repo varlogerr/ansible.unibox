@@ -1,0 +1,4 @@
+---
+- include: _install-git.yml
+- include: _config-gitconfig.yml
+- include: _config-bash.yml

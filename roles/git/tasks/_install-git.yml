@@ -1,0 +1,15 @@
+---
+- block:
+  - name: add git ppa
+    apt_repository:
+      repo: 'ppa:git-core/ppa'
+      codename: trusty
+      filename: git
+      state: present
+
+  - name: update cache
+    shell: apt-get update
+  when: git_from_ppa == 1
+
+- name: install git
+  apt: name=git state=latest
