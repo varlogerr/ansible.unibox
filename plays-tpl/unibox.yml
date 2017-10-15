@@ -3,5 +3,8 @@
   become: yes
   roles:
   - base
+  - docker
   vars:
     my_user: # user
+
+    docker_compose_version: 1.16.1
