@@ -1,0 +1,7 @@
+---
+- block:
+  - include: _install-nvm.yml
+  - include: _install-nodejs.yml
+
+  become: true
+  become_user: "{{ my_user }}"
