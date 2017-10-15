@@ -1,0 +1,4 @@
+---
+- include: _set-locale.yml
+- include: _install-base.yml
+- include: _add-sudoers.yml

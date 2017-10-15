@@ -1,0 +1,7 @@
+---
+- name: add sudoers
+  lineinfile:
+    dest: "/etc/sudoers.d/00_{{ my_user }}"
+    create: yes
+    line: "{{ my_user }} ALL=(ALL) ALL"
+  when: my_user != "vagrant"
