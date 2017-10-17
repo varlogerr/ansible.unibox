@@ -1,0 +1,15 @@
+---
+- name: create apache site docroot
+  file:
+    path:  "{{ apache_docroot }}"
+    state: directory
+    owner: "{{ my_user }}"
+    group: "{{ my_group }}"
+    mode:  0755
+    recurse: yes
+
+- name: configure apache site
+  template:
+    src: default.conf.j2
+    dest: /etc/apache2/sites-enabled/000-default.conf
+  notify: restart apache
