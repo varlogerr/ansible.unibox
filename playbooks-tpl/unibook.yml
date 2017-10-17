@@ -3,6 +3,7 @@
   become: yes
   # see vars dependencies in comments
   roles:
+  - apache    #
   - base      # my_user
   - docker    # my_user
   - git       # my_user, my_group, git_user, git_email, git_from_ppa, my_conf_dir, my_home_dir
@@ -27,3 +28,4 @@
     docker_compose_version: 1.16.1
     nodejs_default_version: 6.11
     mysql_installer_version: 0.8.8-1
+    apache_docroot: "{{ my_home_dir }}/Projects/site"

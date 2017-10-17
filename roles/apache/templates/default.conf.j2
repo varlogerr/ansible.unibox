@@ -1,0 +1,14 @@
+# Listen 80 # not required for 80 port
+
+<VirtualHost *:80>
+    <Directory "{{ apache_docroot }}">
+        Options +Indexes +FollowSymLinks +MultiViews
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    DocumentRoot "{{ apache_docroot }}"
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
