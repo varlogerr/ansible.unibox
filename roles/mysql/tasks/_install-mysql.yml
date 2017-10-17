@@ -13,7 +13,7 @@
   shell: apt-get update
 
 - name: install mysql server / client
-  apt: pkg={{ item }} state=latest
+  apt: pkg={{ item }} state=latest force=yes
   with_items:
   - mysql-server
   - mysql-client
