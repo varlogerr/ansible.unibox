@@ -1,0 +1,24 @@
+---
+- name: configure php
+  template:
+    src: php-dev.ini.j2
+    dest: /etc/php/7.1/apache2/conf.d/php-dev.ini
+    owner: root
+    group: root
+    mode: 0644
+
+- name: configure apache php xdebug
+  template:
+    src: xdebug.ini.j2
+    dest: /etc/php/7.1/apache2/conf.d/20-xdebug.ini
+    owner: root
+    group: root
+    mode: 0644
+
+- name: configure cli php xdebug
+  template:
+    src: xdebug.ini.j2
+    dest: /etc/php/7.1/cli/conf.d/20-xdebug.ini
+    owner: root
+    group: root
+    mode: 0644
