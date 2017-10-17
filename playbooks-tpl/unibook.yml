@@ -9,8 +9,8 @@
   - mongodb   #
   - mysql     # mysql_user, mysql_pass, mysql_installer_version
   - nodejs    # my_user, nodejs_default_version
-  - toolbox   #
   - samba     # my_user, my_group, samba_share_dir
+  - toolbox   #
   vars:
     my_user: # user
     my_group: # user group
