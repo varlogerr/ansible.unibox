@@ -1,0 +1,13 @@
+---
+- name: add vlc stable daily ppa
+  apt_repository:
+    repo: 'ppa:videolan/stable-daily'
+    codename: trusty
+    filename: vlc-stable-daily
+    state: present
+
+- name: update cache
+  shell: apt-get update
+
+- name: install vlc
+  apt: name=vlc state=latest

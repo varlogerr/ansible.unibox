@@ -17,6 +17,7 @@
   - samba        # my_user, my_group, samba_share_dir
   - sublimetext  # my_user, my_group, sublime_config_dir
   - toolbox      #
+  - vlc          #
   vars:
     my_user: # user
     my_group: # user group
