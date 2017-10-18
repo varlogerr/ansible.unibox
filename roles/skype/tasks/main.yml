@@ -1,0 +1,17 @@
+---
+- name: install gpg key
+  apt_key:
+    url: "https://repo.skype.com/data/SKYPE-GPG-KEY"
+    state: present
+
+- name: add skype ppa
+  apt_repository:
+    repo: 'deb [arch=amd64] https://repo.skype.com/deb unstable main'
+    filename: skype
+    state: present
+
+- name: update cache
+  shell: apt-get update
+
+- name: install skype
+  apt: name=skypeforlinux state=latest
