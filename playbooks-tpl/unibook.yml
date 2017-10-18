@@ -12,6 +12,7 @@
   - nodejs    # my_user, nodejs_default_version
   - php       #
   - samba     # my_user, my_group, samba_share_dir
+  - sublime   #
   - toolbox   #
   vars:
     my_user: # user
