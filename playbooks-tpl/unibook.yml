@@ -12,7 +12,7 @@
   - nodejs    # my_user, nodejs_default_version
   - php       #
   - samba     # my_user, my_group, samba_share_dir
-  - sublime   #
+  - sublime   # my_user, my_group, sublime_config_dir
   - toolbox   #
   vars:
     my_user: # user
@@ -30,3 +30,4 @@
     nodejs_default_version: 6.11
     mysql_installer_version: 0.8.8-1
     apache_docroot: "{{ my_home_dir }}/Projects/site"
+    sublime_config_dir: "{{ my_home_dir }}/.config/sublime-text-3/Packages/User"
