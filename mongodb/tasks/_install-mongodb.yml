@@ -1,10 +1,10 @@
 # Stretch temp work around
 - name: add jessie backports
-  lineinfile:
-    dest: /etc/apt/sources.list
-    create: yes
-    line: 'deb http://ftp.debian.org/debian jessie-backports main'
+  apt_repository:
+    repo: deb http://ftp.debian.org/debian jessie-backports main
     state: present
+    filename: mongodb
+  when: ansible_distribution_release == 'stretch'
 
 - name: add mongo ppa key
   apt_key:
