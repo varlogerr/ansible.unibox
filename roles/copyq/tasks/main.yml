@@ -1,0 +1,13 @@
+---
+- name: add copyq ppa
+  apt_repository:
+    repo: 'ppa:hluk/copyq'
+    codename: trusty
+    filename: copyq
+    state: present
+
+- name: update cache
+  shell: apt-get update
+
+- name: install copyq
+  apt: name=copyq state=latest
