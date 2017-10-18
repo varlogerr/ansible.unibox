@@ -1,10 +1,9 @@
 ---
 - name: add php ppa
-  lineinfile:
-    dest: /etc/apt/sources.list.d/php.list
-    create: yes
-    line: 'deb http://ppa.launchpad.net/ondrej/php/ubuntu trusty main'
+  apt_repository:
+    repo: deb http://ppa.launchpad.net/ondrej/php/ubuntu trusty main
     state: present
+    filename: php
 
 - name: update cache
   shell: apt-get update
