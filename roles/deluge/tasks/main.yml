@@ -1,0 +1,13 @@
+---
+- name: add deluge ppa
+  apt_repository:
+    repo: "ppa:deluge-team/ppa"
+    filename: deluge
+    codename: "{{ deluge_ppa_distro_codename }}"
+    state: present
+
+- name: update cache
+  shell: apt-get update
+
+- name: install deluge
+  apt: name=deluge state=latest
