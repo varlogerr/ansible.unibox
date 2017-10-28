@@ -1,0 +1,3 @@
+---
+- name: install vagrant
+  apt: deb=https://releases.hashicorp.com/vagrant/2.0.0/vagrant_2.0.0_x86_64.deb
