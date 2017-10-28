@@ -24,20 +24,26 @@
   - virtualbox   #
   - vlc          #
   vars:
-    my_user: # user
-    my_group: # user group
-    git_user: # git user
-    git_email: # git user email
-    mysql_user: # mysql user
-    mysql_pass: # mysql password
+    # settable vars
+      my_user: # user
+      my_group: # user group
+      git_user: # git user
+      git_email: # git user email
+      mysql_user: # mysql user
+      mysql_pass: # mysql password
 
-    my_home_dir: "/home/{{ my_user }}"
-    my_conf_dir: "{{ my_home_dir }}/.{{ my_user }}_conf"
-    git_from_ppa: 0
-    samba_share_dir: "{{ my_home_dir }}/Share"
-    docker_compose_version: 1.16.1
-    nodejs_default_version: 6.11
-    mysql_installer_version: 0.8.8-1
-    apache_docroot: "{{ my_home_dir }}/Projects/site"
-    sublime_config_dir: "{{ my_home_dir }}/.config/sublime-text-3/Packages/User"
-    deluge_ppa_distro_codename: "{{ ansible_distribution_release }}"
+    # changable vars
+      # supported values: ubuntu
+      default_distro_name: "{{ ansible_distribution | lower }}"
+      # supported values: trusty, xenial
+      default_distro_codename: "{{ ansible_distribution_release | lower }}"
+
+      my_home_dir: "/home/{{ my_user }}"
+      my_conf_dir: "{{ my_home_dir }}/.{{ my_user }}_conf"
+      git_from_ppa: 0
+      samba_share_dir: "{{ my_home_dir }}/Share"
+      docker_compose_version: 1.16.1
+      nodejs_default_version: 6.11
+      mysql_installer_version: 0.8.8-1
+      apache_docroot: "{{ my_home_dir }}/Projects/site"
+      sublime_config_dir: "{{ my_home_dir }}/.config/sublime-text-3/Packages/User"

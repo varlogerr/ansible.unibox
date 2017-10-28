@@ -3,7 +3,7 @@
   apt_repository:
     repo: "ppa:deluge-team/ppa"
     filename: deluge
-    codename: "{{ deluge_ppa_distro_codename }}"
+    codename: "{{ default_distro_codename }}"
     state: present
 
 - name: update cache

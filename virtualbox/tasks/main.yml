@@ -3,7 +3,7 @@
   lineinfile:
     path: /etc/apt/sources.list.d/virtualbox.list
     create: yes
-    line: "deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
+    line: "deb http://download.virtualbox.org/virtualbox/debian {{ default_distro_codename }} contrib"
     state: present
 
 - name: add public key
