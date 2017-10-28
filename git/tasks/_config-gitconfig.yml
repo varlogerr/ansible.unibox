@@ -10,7 +10,7 @@
 - name: add the user custom gitconfig
   template:
     src: gitconfig.j2
-    dest: "{{ my_gitconfig_path }}"
+    dest: "{{ _git_custom_gitconfig_path }}"
     owner: "{{ my_user }}"
     group: "{{ my_group }}"
     mode: 0600
@@ -23,4 +23,4 @@
     group: "{{ my_group }}"
     block: |
       [include]
-        path = "{{ my_gitconfig_path }}"
+        path = "{{ _git_custom_gitconfig_path }}"

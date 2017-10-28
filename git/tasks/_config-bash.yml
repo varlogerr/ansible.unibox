@@ -10,7 +10,7 @@
 - name: add user custom bashrc git config
   template:
     src: bashrc.j2
-    dest: "{{ my_bashrc_git_path }}"
+    dest: "{{ _git_custom_bashrc_path }}"
     owner: "{{ my_user }}"
     group: "{{ my_group }}"
     mode: 0600
@@ -21,4 +21,4 @@
     create: yes
     owner: "{{ my_user }}"
     group: "{{ my_group }}"
-    line: "source {{ my_bashrc_git_path }}"
+    line: "source {{ _git_custom_bashrc_path }}"
