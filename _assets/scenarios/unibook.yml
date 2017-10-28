@@ -20,6 +20,7 @@
   - sublimetext  # my_user, my_group, sublime_config_dir
   - teamviewer   #
   - toolbox      #
+  - virtualbox   #
   - vlc          #
   vars:
     my_user: # user
