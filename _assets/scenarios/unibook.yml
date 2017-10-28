@@ -5,6 +5,7 @@
   roles:
   - apache       # my_user, my_group, apache_docroot
   - base         # my_user
+  - bash         # my_user, my_group, my_home_dir, my_conf_dir
   - copyq        #
   - deluge       # distro_codename
   - docker       # my_user

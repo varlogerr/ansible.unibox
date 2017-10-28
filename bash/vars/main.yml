@@ -1,0 +1,2 @@
+---
+_bash_custom_bashrc_path: "{{ my_conf_dir }}/.bashrc"
