@@ -8,6 +8,7 @@
   - bash         # my_user, my_group, my_home_dir, my_conf_dir
   - copyq        #
   - deluge       # distro_codename
+  - devtools     # my_user, my_group, my_home_dir, my_bin_dir
   - docker       # my_user
   - git          # my_user, my_group, git_user, git_email, git_from_ppa, my_conf_dir, my_home_dir
   - googlechrome #
@@ -47,3 +48,4 @@
       mysql_installer_version: 0.8.8-1
       apache_docroot: "{{ my_home_dir }}/Projects/site"
       sublime_config_dir: "{{ my_home_dir }}/.config/sublime-text-3/Packages/User"
+      my_bin_dir: "{{ my_home_dir }}/.{{ my_user }}_bin"

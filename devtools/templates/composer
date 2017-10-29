@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker run -it --rm \
+    -v $(pwd):/dummy -w /dummy -u $(id -u):$(id -g) \
+    composer:1.5 $@

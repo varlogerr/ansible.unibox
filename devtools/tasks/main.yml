@@ -1,0 +1,24 @@
+---
+- name: create custom bin directory
+  file:
+    path: "{{ my_bin_dir }}"
+    state: directory
+    mode: 0700
+    owner: "{{ my_user }}"
+    group: "{{ my_group }}"
+
+- name: add custom bin directory to PATH
+  lineinfile:
+    dest: "{{ my_home_dir }}/.bashrc"
+    create: yes
+    owner: "{{ my_user }}"
+    group: "{{ my_group }}"
+    line: "export PATH=$PATH:{{ my_bin_dir }}"
+
+- name: create composer script
+  template:
+    src: composer
+    dest: "{{ my_bin_dir }}/composer"
+    owner: "{{ my_user }}"
+    group: "{{ my_group }}"
+    mode: 0700
